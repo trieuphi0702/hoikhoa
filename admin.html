@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Quản Lý Quay Thưởng</title>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f1f5f9; color: #1e293b; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+        .container { background: #fff; padding: 2rem 3rem; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 90%; max-width: 750px; }
+        h1, h2 { color: #0284c7; text-align: center; margin-top: 0;}
+        input[type="password"], input[type="text"], textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-size: 16px; }
+        input:focus, textarea:focus { border-color: #0284c7; outline: none; box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2); }
+        button { padding: 12px 20px; font-size: 16px; font-weight: bold; background: #0284c7; color: #fff; border: none; border-radius: 6px; cursor: pointer; transition: 0.2s; width: 100%; margin-bottom: 10px; }
+        button:hover { background: #0369a1; }
+        .btn-secondary { background: #e2e8f0; color: #475569; }
+        .btn-secondary:hover { background: #cbd5e1; }
+        .btn-test { background: #10b981; }
+        .btn-test:hover { background: #059669; }
+        #app-area { display: none; }
+        .flex-row { display: flex; gap: 10px; }
+        .status { text-align: center; font-weight: bold; color: #ef4444; margin-bottom: 15px; }
+        input[type="file"] { display: none; }
+        
+        /* Khu vực nhập tay */
+        .manual-input-box { background: #f8fafc; border: 1px dashed #cbd5e1; padding: 15px; border-radius: 8px; margin-bottom: 15px; }
+        .manual-input-box h3 { margin: 0 0 10px 0; font-size: 14px; color: #475569; text-transform: uppercase;}
+    </style>
+</head>
+<body>
+
+    <div class="container" id="login-area">
+        <h1>Bảo Mật Admin</h1>
+        <input type="password" id="sysPassword" placeholder="Nhập mật khẩu (Mặc định: admin)" onkeypress="if(event.key === 'Enter') login()">
+        <button onclick="login()">Đăng Nhập</button>
+        <div id="login-error" style="color: red; text-align: center; display: none; margin-top: 10px;">Sai mật khẩu!</div>
+    </div>
+
+    <div class="container" id="app-area">
+        <h2>Dữ Liệu Hệ Thống Quay Thưởng</h2>
+        
+        <div class="flex-row">
+            <label for="excelUpload" class="btn-secondary" style="display: block; text-align:center; padding: 12px; border-radius: 6px; cursor: pointer; flex: 1;">
+                📁 Import Excel
+            </label>
+            <input type="file" id="excelUpload" accept=".xlsx, .xls" onchange="handleExcelUpload(event)">
+            <button class="btn-test" style="flex: 1;" onclick="generateTestData()">Sinh 500 Dữ Liệu Test</button>
+        </div>
+
+        <div class="manual-input-box">
+            <h3>Nhập tay từng người (Tự động nối vào danh sách)</h3>
+            <div class="flex-row" style="margin-bottom: 0;">
+                <input type="text" id="manualName" placeholder="Họ và Tên (VD: Nguyễn Văn A)" style="flex: 2; margin-bottom: 0;" onkeypress="if(event.key === 'Enter') addManual()">
+                <input type="text" id="manualClass" placeholder="Lớp (VD: 12A1)" style="flex: 1; margin-bottom: 0;" onkeypress="if(event.key === 'Enter') addManual()">
+                <button onclick="addManual()" style="width: auto; margin-bottom: 0; background: #f59e0b;">Thêm</button>
+            </div>
+        </div>
+
+        <textarea id="participantsList" rows="10" placeholder="Danh sách tổng (Tên - Lớp)&#10;Có thể chỉnh sửa trực tiếp tại đây..."></textarea>
+        
+        <div class="status" id="countStatus">Danh sách trống</div>
+        <button onclick="saveData()" style="font-size: 1.2rem; padding: 15px;">LƯU CHUYỂN DỮ LIỆU SANG MÀN HÌNH CHÍNH</button>
+        <p style="text-align: center; font-size: 14px; color: #10b981; display: none;" id="save-msg">Đã đồng bộ thành công! Mở trang index.html để xem.</p>
+    </div>
+
+    <script>
+        const PASS = "admin";
+
+        function login() {
+            if (document.getElementById('sysPassword').value === PASS) {
+                document.getElementById('login-area').style.display = 'none';
+                document.getElementById('app-area').style.display = 'block';
+                loadExistingData();
+            } else {
+                document.getElementById('login-error').style.display = 'block';
+            }
+        }
+
+        // --- Logic Nhập Tay ---
+        function addManual() {
+            const nameInput = document.getElementById('manualName');
+            const classInput = document.getElementById('manualClass');
+            const name = nameInput.value.trim();
+            const cls = classInput.value.trim();
+            
+            if (!name) return; // Bắt buộc có tên
+
+            const entry = cls ? `${name} - ${cls}` : name;
+            const ta = document.getElementById('participantsList');
+            const current = ta.value.trim();
+            
+            ta.value = current ? current + '\n' + entry : entry;
+            
+            // Xóa form và focus lại vào ô Tên
+            nameInput.value = '';
+            classInput.value = '';
+            nameInput.focus();
+            updateCount();
+        }
+
+        function generateTestData() {
+            const firstNames = ["Nguyễn", "Trần", "Lê", "Phạm", "Hoàng", "Huỳnh", "Phan", "Vũ", "Võ", "Đặng", "Bùi", "Đỗ"];
+            const middleNames = ["Thị", "Văn", "Đức", "Ngọc", "Hữu", "Minh", "Thu", "Thanh"];
+            const lastNames = ["Anh", "Tuấn", "Dũng", "Hương", "Trang", "Linh", "Hùng", "Cường", "Lan", "Phương", "Bình", "Sơn"];
+            const classes = ["12A1", "12A2", "12A3", "12A4", "12A5", "12A6", "12A7", "12A8"];
+
+            let testData = [];
+            for (let i = 0; i < 500; i++) {
+                const name = `${firstNames[Math.floor(Math.random() * firstNames.length)]} ${middleNames[Math.floor(Math.random() * middleNames.length)]} ${lastNames[Math.floor(Math.random() * lastNames.length)]}`;
+                const cls = classes[Math.floor(Math.random() * classes.length)];
+                testData.push(`${name} - ${cls}`);
+            }
+            
+            const current = document.getElementById('participantsList').value.trim();
+            document.getElementById('participantsList').value = current ? current + '\n' + testData.join('\n') : testData.join('\n');
+            updateCount();
+        }
+
+        function handleExcelUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const data = new Uint8Array(e.target.result);
+                const workbook = XLSX.read(data, {type: 'array'});
+                const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+                const jsonData = XLSX.utils.sheet_to_json(worksheet, {header: 1});
+                
+                let extracted = [];
+                jsonData.forEach(row => {
+                    if(row[0] && row[1]) { extracted.push(`${String(row[0]).trim()} - ${String(row[1]).trim()}`); } 
+                    else if (row[0]) { extracted.push(String(row[0]).trim()); }
+                });
+
+                if(extracted.length > 0) {
+                    const currentVal = document.getElementById('participantsList').value.trim();
+                    document.getElementById('participantsList').value = currentVal ? currentVal + '\n' + extracted.join('\n') : extracted.join('\n');
+                    updateCount();
+                    alert(`Đã import thêm ${extracted.length} dữ liệu!`);
+                }
+            };
+            reader.readAsArrayBuffer(file);
+            event.target.value = '';
+        }
+
+        document.getElementById('participantsList').addEventListener('input', updateCount);
+
+        function updateCount() {
+            const lines = document.getElementById('participantsList').value.split('\n').filter(n => n.trim() !== '');
+            document.getElementById('countStatus').innerText = `Tổng số: ${lines.length} thành viên`;
+        }
+
+        function saveData() {
+            const rawText = document.getElementById('participantsList').value;
+            const participants = rawText.split('\n').map(n => n.trim()).filter(n => n !== '');
+            localStorage.setItem('hoikhoa_data', JSON.stringify(participants));
+            
+            const msg = document.getElementById('save-msg');
+            msg.style.display = 'block';
+            setTimeout(() => msg.style.display = 'none', 3000);
+        }
+
+        function loadExistingData() {
+            const saved = localStorage.getItem('hoikhoa_data');
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                document.getElementById('participantsList').value = parsed.join('\n');
+                updateCount();
+            }
+        }
+    </script>
+</body>
+</html>
