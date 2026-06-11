@@ -1,0 +1,531 @@
+Nguyễn Thị Duyên - 12A1
+Tạ Công Anh - 12A1
+Tạ Thị Ánh - 12A1
+Trương Đình Trung - 12A1
+Nguyễn Thị Hà - 12A1
+Bùi T.Kim Ngân - 12A1
+Nguyễn Duy Quang - 12A1
+Phạm Thị Hoài - 12A1
+Nguyễn Thị Thản - 12A1
+Nguyễn Thị Dương - 12A1
+Tạ Thị Hương - 12A1
+Nguyễn Thị Thục - 12A1
+Nguyễn Phan Thắng - 12A1
+Nguyễn Hữu Đa - 12A1
+Hoàng Bá Thanh - 12A1
+Cao Văn Tạo - 12A1
+Nguyễn Thị Nguyệt - 12A1
+Nguyễn Thị Thạch - 12A1
+Ngô Văn Đức - 12A1
+Chu T.Thanh Quỳnh - 12A1
+Phó Thị An - 12A1
+Hoàng Thị Hoan - 12A1
+Nguyễn Thị Quý - 12A1
+Nguyễn Thị Loan - 12A1
+Nguyễn Thế Phùng - 12A1
+Nguyễn Thị Luyến - 12A1
+Trần Văn Long - 12A1
+Hoàng Thị Xuân - 12A2
+Nguyễn Hữu Giang - 12A2
+Nguyễn Thị Mai Nguyên - 12A2
+Nguyễn Hữu Đô - 12A2
+Phùng Văn Minh B - 12A2
+Ngô Thị My - 12A2
+Nguyễn Thị Hoàn - 12A2
+Đỗ Văn Hoan - 12A2
+Đỗ Thị Lan - 12A2
+Nguyễn Đình Mậu - 12A2
+Nguyễn Văn Nghiêm - 12A2
+Nguyễn Quang Giang - 12A2
+Đỗ Thị Liễu - 12A2
+Ngô Văn Thuận - 12A2
+Phùng Văn Minh A - 12A2
+Nguyễn Văn Hải - 12A2
+Ngô Thị Thùy - 12A2
+Võ Huyền Trang - 12A2
+Tạ Thị Huyền - 12A2
+Nguyễn Thị Linh - 12A2
+Nguyễn Thị Hải - 12A2
+Nguyễn Thế Nhân - 12A2
+Đỗ Thị Hoan - 12A2
+Nguyễn Thị Đoan - 12A2
+Đỗ Thị Hiền - 12A2
+Thêm 1 sz L - 12A2
+Phạm Anh Tuấn - 12A3
+Nguyễn Quang Quí - 12A3
+Nguyễn Thị Miền - 12A3
+Phùng Văn Long - 12A3
+Nguyễn Thị Liên - 12A3
+Nguyễn T.Ngọc Anh - 12A3
+Chu Đức Quỳnh - 12A3
+Nguyễn Thị Hải - 12A3
+Đỗ Thị Hạnh - 12A3
+Phùng Văn Chính - 12A3
+Nguyễn Đắc Vượng - 12A3
+Nguyễn Văn Năm - 12A3
+Nguyễn Thị Phượng - 12A3
+Nguyễn Thị Phương - 12A3
+Phùng Thị Thanh - 12A3
+Ng Thị Thắm - 12A3
+Ng Thị Thoa - 12A3
+Nguyễn Văn Mạnh - 12A3
+Nguyễn Văn Long - 12A3
+Tạ Thị Hòa - 12A3
+Tạ Thị Mơ - 12A3
+Tạ Tương Luân - 12A3
+Tạ Thị Huyền - 12A3
+Nguyễn Văn Khoa - 12A3
+Ngô Thị Ngọc - 12A3
+Ngô Thị Kim - 12A3
+Phan Thị Hiền - 12A3
+Nguyễn Thị Thu - 12A3
+Tạ Thị Thúy - 12A3
+Chu Thị Hoa - 12A3
+Nguyễn Thị Nga - 12A3
+Chu Thị Nga - 12A3
+Bùi Thị Hiền - 12A3
+Hoàng Thùy Linh - 12A3
+Châm - 12A4
+Điệp - 12A4
+Nguyễn Tuấn - 12A4
+Cường - 12A4
+Đỗ Lan - 12A4
+Trịnh Lan - 12A4
+Thêm béo - 12A4
+Hưng - 12A4
+Hoa - 12A4
+Phạm Quyên - 12A4
+Ngọc - 12A4
+Tùng - 12A4
+Ng Quỳnh - 12A4
+Thương - 12A4
+Hương - 12A4
+Giảng - 12A4
+Nhung - 12A4
+Sơn - 12A4
+Thi - 12A4
+Thịnh - 12A4
+Linh - 12A4
+Phương - 12A4
+Trang - 12A4
+Kim Anh - 12A4
+Tiến - 12A4
+Hoằng - 12A4
+Huyền - 12A4
+Ng Quyên - 12A4
+Trịnh Dung - 12A4
+Nguyễn Đình Tú - 12A4
+Tô Diễm - 12A4
+Nguyễn Hường - 12A4
+Hương - 12A5
+Nguyễn Hoà - 12A5
+Vương Huyền - 12A5
+Triệu Hường - 12A5
+Quỳnh - 12A5
+Nụ - 12A5
+Luân - 12A5
+Phúc - 12A5
+Trang - 12A5
+Nhung - 12A5
+Phi - 12A5
+Nga - 12A5
+Hiếu - 12A5
+Phạm.Tuấn - 12A5
+Mai - 12A5
+Hiền - 12A5
+Chanh - 12A5
+Tuyết - 12A5
+Thiết - 12A5
+Tuấn Tuất - 12A5
+Đặng Hằng - 12A5
+Nguyễn Hồng - 12A5
+Trung - 12A5
+Khuyên - 12A5
+Tuyên - 12A5
+Thu - 12A5
+Nguyệt - 12A5
+Hạnh (SP) - 12A5
+Dương Hạnh - 12A5
+Huệ - 12A5
+Tấn - 12A5
+Tráng - 12A5
+Nga - 12A6
+Giang - 12A6
+Hà YN - 12A6
+Tùng YN - 12A6
+Hoàn - 12A6
+Đoàn - 12A6
+Hoan - 12A6
+Hà SP - 12A6
+Vân - 12A6
+Thuỷ - 12A6
+Oanh LD - 12A6
+Trần Thìn - 12A6
+Sen - 12A6
+Bình - 12A6
+Hải YN - 12A6
+Nghị - 12A6
+Tuấn YN - 12A6
+Phương A - 12A6
+Thuần - 12A6
+Lan - 12A6
+Sâm - 12A6
+Tâm - 12A6
+Liên - 12A6
+Cường - 12A6
+Hải - 12A6
+Tấn - 12A6
+Đức - 12A6
+Ngọc - 12A6
+Tươi - 12A6
+Cảnh - 12A6
+Thìn - 12A6
+Nguyễn Hữu Tùng - 12A6
+Văn Thị Ngư - 12A7
+Nguyễn Thị Hiền - 12A7
+Ng Thị Giang - 12A7
+Ng Thị Kim Dung - 12A7
+Lê Thị Nhung - 12A7
+Nguyễn Thị Thảo - 12A7
+Ng Thị Hoa - 12A7
+Trịnh Thị Tuyết - 12A7
+Ng Thị Sim - 12A7
+Ng Văn Mai - 12A7
+Ng Thị Loan - 12A7
+Trịnh Quang Dũng - 12A7
+Ng Thị Bông Lúa - 12A7
+Ng Thị Thìn - 12A7
+Ng Thị Phượng - 12A7
+Ng Thị Quyên - 12A7
+Hoàng Văn Nam - 12A7
+Nguyễn Thị Phương Thảo - 12A7
+Nguyễn Danh Quân - 12A7
+Trần Đình Vụ - 12A7
+Nguyễn Thị Tuyết - 12A7
+Nguyễn Ngọc Toàn - 12A7
+Đỗ Thị Thu Hà - 12A7
+Huyền - 12A8
+Trang A - 12A8
+Vân - 12A8
+Hiền - 12A8
+Lê Thương - 12A8
+Nguyễn Hưng - 12A8
+Lê Út - 12A8
+Nguyễn Long - 12A8
+Danh Đoàn - 12A8
+Toàn - 12A8
+Thuý Nguyễn - 12A8
+Bình - 12A8
+Thật - 12A8
+Mừng - 12A8
+Danh Thắng - 12A8
+Thi - 12A8
+Xuân - 12A8
+Đăng Đoàn - 12A8
+Toản - 12A8
+Bá Quyết - 12A8
+Doanh - 12A8
+Thường - 12A8
+Ngọc - 12A8
+Đăng Thìn - 12A8
+Văn Dung - 12A8
+Thuynguyen - 12A8
+Văn Quyết - 12A8
+Sơn - 12A8
+Lê Thuấn - 12A8
+Giang - 12A8
+Thực - 12A8
+Thoan - 12A8
+Nhã - 12A8
+Mầu Long - 12A8
+Đỗ Thị Nga - 12A8
+Phạm Thị Tâm - 12A9
+Nguyễn Đình Chiến - 12A9
+Tạ Công Minh - 12A9
+Nguyễn Quốc Sơn - 12A9
+Văn Thị Kim Dung - 12A9
+Trần Thị Mây - 12A9
+Nguyễn Thị Loan - 12A9
+Nguyễn Văn Nghệ - 12A9
+Nguyễn Thị Nhã - 12A9
+Nguyễn Duy Mạnh - 12A9
+Nguyễn Bích Hồng - 12A9
+Mầu Thị Duyên - 12A9
+Nguyễn Chí Mạnh - 12A9
+Nguyễn Cơ Tuấn - 12A9
+Nguyễn Thanh Mai - 12A9
+Nguyễn Thị Thanh - 12A9
+Nguyễn Quý Chung - 12A9
+Nguyễn Thị Vui - 12A9
+Quang Hải - 12A9
+Vũ Mạnh - 12A9
+Tỉnh - 12A9
+Hoàng Thị Thu Phương - 12A9
+Nguyễn Thị Hạnh - 12A9
+Trịnh Thị Nhàn - 12A9
+Nguyễn Thị Trang - 12A9
+Nguyễn Thị Thiệp - 12A9
+Nguyễn Thị Hiền - 12A9
+Bùi Trang - 12A9
+Cấn Thị Huyền - 12A9
+Nguyễn Thị Nhung - 12A9
+Hoàng Thị Hồng - 12A9
+Nguyễn Đình Thuận - 12A9
+Thuần - 12A9
+Hoàng Phú Nam - 12A9
+Huy Tuấn - 12A9
+Nguyễn Đôn Xuân - 12A9
+Phan Huy Hiếu - 12A9
+Nguyễn Thùy Anh - 12A10
+Trịnh Quang Cao - 12A10
+Nguyễn Hoàng Cường - 12A10
+Hoàng Thị Dung - 12A10
+Nguyễn Viết Dũng - 12A10
+Nguyễn Thị Duyên - 12A10
+Nguyễn Hoàng Giang - 12A10
+Tạ Tương Hải - 12A10
+Trần Thái Hạnh - 12A10
+Hoàng Phú Hiệp - 12A10
+Phùng Đình Hiếu - 12A10
+Nguyễn Văn Hùng - 12A10
+Nguyễn Phan Huỳnh - 12A10
+Nguyễn Thế Khánh - 12A10
+Đặng Thị Khương - 12A10
+Nguyễn Duy Kiên - 12A10
+Bùi Thị Lan - 12A10
+Nguyễn Thị Lan - 12A10
+Nguyễn Thị Mỹ Liên - 12A10
+Ngô Văn Lợi - 12A10
+Lê Thị Lan Mai - 12A10
+Tạ Thị Mai - 12A10
+Đào Thị Miền - 12A10
+Nguyễn Thị Minh(A) - 12A10
+Nguyễn Thị Minh(B) - 12A10
+Trần Văn Nhạc - 12A10
+Nguyễn Thị Nữ - 12A10
+Kim Thị Oanh - 12A10
+Nguyễn Thị Phương - 12A10
+Nguyễn Ngọc Quỳnh - 12A10
+Hoàng Văn Quỳnh - 12A10
+Nguyễn Thị Thanh - 12A10
+Nguyễn Thị Thêm - 12A10
+Nguyễn Thị Thùy - 12A10
+Phạm Thị Thủy - 12A10
+Đặng Kiêm Toàn - 12A10
+Đặng Thanh Trà - 12A10
+Nguyễn Thị Nha Trang - 12A10
+Nguyễn Thị Quỳnh Trang - 12A10
+Ngô Thị Trang - 12A10
+Nguyễn Văn Trình - 12A10
+Vũ Đắc Vượng - 12A10
+Trâm Nguyễn - 12A11
+Việt - 12A11
+Phạm Hương - 12A11
+Nguyễn Thùy - 12A11
+Mạnh - 12A11
+Trang Ruồi - 12A11
+Dũng Canh - 12A11
+Thủy LT - 12A11
+Chung - 12A11
+Nghĩa - 12A11
+Công Kỳ - 12A11
+Quang Long - 12A11
+Thu - 12A11
+Bá Cường - 12A11
+Xuân Gấu - 12A11
+Huyền - 12A11
+Duy - 12A11
+Tâm kem - 12A11
+Tú - 12A11
+Thuý Muôi - 12A11
+Việt Hà - 12A11
+Ngô Thu - 12A11
+Đức - 12A11
+Dung - 12A11
+Thắng - 12A11
+Thương - 12A11
+Thị Xuân - 12A11
+Tiến - 12A11
+Triệu Long - 12A11
+Phương Rắn - 12A11
+Dung - 12A11
+Phước - 12A11
+Vân Anh - 12A11
+Văn Quân - 12A11
+Hữu - 12A11
+Công Quân - 12A11
+Quang Cường - 12A11
+Phạm Duyên - 12A11
+Phương Mai - 12A11
+Thìn - 12A11
+Nguyễn Thị Nguyệt - 12A12
+Nguyễn Thơ - 12A12
+Nguyễn Hường - 12A12
+Phạm Phương - 12A12
+Nguyễn Hiền A - 12A12
+Đỗ Hường - 12A12
+Đỗ Quế - 12A12
+Nguyễn Thư - 12A12
+Nguyễn Thuý - 12A12
+Nguyễn Huyền A - 12A12
+Nguyễn Suốt - 12A12
+Hoàng Phú Lợi - 12A12
+Nguyễn Thị Vững - 12A12
+Kim Tuyết - 12A12
+Nguyễn Phượng - 12A12
+Duy Thế - 12A12
+Trọng Hà - 12A12
+Đỗ Hoa - 12A12
+Nguyễn Thu - 12A12
+Trần Huyền - 12A12
+Nguyễn Hà - 12A12
+Vũ Hiền - 12A12
+Ngô Thị Hằng - 12A12
+Nguyễn trang - 12A12
+Nguyễn Nga - 12A12
+Lộ Huyền - 12A12
+Nguyễn Hiền B - 12A12
+Hoàng Lơ - 12A12
+Nguyễn Bá Lực - 12A12
+Đặng Nga - 12A12
+Lý - 12B1
+Thu huyền - 12B1
+Quyên - 12B1
+thủy - 12B1
+linh - 12B1
+Đạt - 12B1
+Hòa - 12B1
+Lương - 12B1
+Hiệp - 12B1
+Cầu - 12B1
+Nhung - 12B1
+Thức - 12B1
+Ngạn - 12B1
+Vũ Thúy - 12B1
+Mạnh - 12B1
+Thuận - 12B1
+Phương - 12B1
+Hùng - 12B1
+Kết - 12B1
+H. Thành - 12B1
+Ng Thj Huyền - 12B2
+Nguyễn Văn Huấn - 12B2
+Nguyễn Đình Mạnh - 12B2
+Vũ Văn Định - 12B2
+Nguyễn Thị Thêm - 12B2
+Trần Quang Trà - 12B2
+Trần Thị Hường - 12B2
+Phạm Thế Huệ - 12B2
+Nguyễn Đình Hào - 12B2
+Lê Thị Chinh - 12B2
+Dương Hoài Thu - 12B2
+Nguyễn Thế Tuyến - 12B2
+Nguyễn Viết Cải - 12B2
+Trần Quang Dân - 12B2
+Lương Thế Vĩnh - 12B2
+Ngô Duy Tuyền - 12B2
+Nguyễn Thị Miền - 12B2
+Dương Văn Thuân - 12B2
+Trần Văn Vượng - 12B2
+Nguyễn Doãn Hướng - 12B2
+Trần Thị Chuyền - 12B2
+Phạm Văn Lượng - 12B2
+Trịnh Bá Anh - 12B2
+Ng Trung Nam - 12B2
+Đỗ Huy Hiệp - 12B2
+Ng Thế Hiệp - 12B2
+Ng Bá Thương - 12B2
+Ng Đắc Cương - 12B2
+Ng Như Dũng - 12B2
+Ng Công Dân - 12B2
+Bùi Thị Thuỷ - 12B2
+Vũ Văn Long - 12B2
+Ng Như Thêm - 12B2
+Ng Xuân Hội - 12B2
+Ng Thị Sen - 12B2
+Ng Danh Hiền - 12B2
+Ng Danh Tuyến - 12B2
+Ngọc Tân - 12B2
+Bá Luy - 12B2
+Viết Mạnh - 12B2
+Nguyễn Văn Nam - 12B2
+Nguyễn Ngọc Việt - 12B2
+Văn Công Tuấn - 12B2
+Nguyễn Như Giới - 12B2
+Đỗ Thị Chiến - 12B3
+Tạ Thị Vui A - 12B3
+Ng T Thu Trang - 12B3
+Ng Thế Vinh - 12B3
+Ng Thị Hà - 12B3
+Ng Văn Vinh - 12B3
+Ng Quang Hiệp - 12B3
+Bùi văn Trọng - 12B3
+Ng Quang Thiện - 12B3
+Ng Thành Long - 12B3
+Ng Viết Tùng - 12B3
+Ng Duy Đức - 12B3
+Ng Đăng Hưng - 12B3
+Chu Chí Hồng - 12B3
+Tạ Thị Vui B - 12B3
+Ng Văn Bằng - 12B3
+Ng Viết Vượng - 12B3
+Ngô Thị Liêm - 12B3
+Chu Chí Hưng - 12B3
+Ng Bá Hiệp - 12B3
+Phó Thị Hường - 12B3
+Ng T Thanh Thuý - 12B3
+Ng Văn Thực - 12B3
+Nguyễn Gia Thắng - 12B3
+Hiệp - 12B4
+Mạnh - 12B4
+Dung - 12B4
+Hoàng Thanh - 12B4
+Lan Anh - 12B4
+Nguyễn Hà Nội - 12B4
+Hằng - 12B4
+Mỹ Phương - 12B4
+Hương - 12B4
+Hiền Kuteo - 12B4
+Vũ - 12B4
+Thanh - 12B4
+Trần Văn Hải - 12B4
+Thương - 12B4
+Bùi Hải - 12B4
+Thành - 12B4
+Đắc - 12B4
+Thủy La Tinh - 12B4
+Thùy - 12B4
+Hợp - 12B4
+Mai - 12B4
+Hồng - 12B4
+Toàn - 12B4
+Tùng - 12B4
+Nhàn - 12B4
+Kết - 12B4
+Tuấn - 12B4
+Bá Hà - 12B4
+Tươi - 12B5
+Trinh - 12B5
+Viết Hạnh - 12B5
+Toan - 12B5
+Vui - 12B5
+Hưng - 12B5
+Yến - 12B5
+Phong - 12B5
+Oanh - 12B5
+Thuyết - 12B5
+Sang - 12B5
+Hiền B - 12B5
+Chính - 12B5
+Hiệp - 12B5
+Hiền A - 12B5
+Hạnh (An Thọ) - 12B5
+Khanh - 12B5
+Dũng - 12B5
+Hoài - 12B5
+Ngọc Anh - 12B5
+Thắng - 12B5
+Lý - 12B5
+Nhượng - 12B5
+Văn - 12B5
+Thật - 12B5
