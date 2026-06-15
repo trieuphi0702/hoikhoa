@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gala 20 Năm Ngày Trở Về - THPT Hoài Đức B</title>
+    <!-- Thư viện tạo hiệu ứng pháo giấy -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
+            color: #fff; overflow: hidden;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* --- HIỆU ỨNG BACKGROUND TEXT TRÔI NỔI --- */
+        #floating-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1; pointer-events: none; overflow: hidden;
+        }
+        .float-name {
+            position: absolute; font-weight: bold; white-space: nowrap;
+            animation: floatUp linear forwards;
+        }
+        @keyframes floatUp {
+            0% { opacity: 0; transform: translateY(50px) scale(0.8); }
+            15% { opacity: 1; transform: translateY(20px) scale(1); }
+            85% { opacity: 1; transform: translateY(-30px) scale(1); }
+            100% { opacity: 0; transform: translateY(-60px) scale(0.8); }
+        }
+
+        /* --- UI CHÍNH SÂN KHẤU --- */
+        .content-wrapper { z-index: 10; display: flex; flex-direction: column; align-items: center; }
+
+        .header { text-align: center; margin-bottom: 2rem; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
+        .subtitle { color: #fcd34d; font-size: 1.5rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px;}
+        .title { color: #fff; font-size: 3.5rem; font-weight: 900; margin: 0; text-shadow: 0 0 20px rgba(255,255,255,0.4); text-transform: uppercase;}
+
+        .display-board {
+            background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px);
+            border: 4px solid #fcd34d; border-radius: 20px;
+            width: 80vw; max-width: 900px; padding: 50px 30px;
+            text-align: center; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            margin-bottom: 40px; min-height: 200px;
+            display: flex; flex-direction: column; justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .display-board.highlight {
+            border-color: #ef4444; background: rgba(15, 23, 42, 0.95);
+            box-shadow: 0 0 80px rgba(239, 68, 68, 0.7);
+        }
+
+        .rolling-name { font-size: 5rem; font-weight: bold; color: #fff; margin-bottom: 10px; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
+        .rolling-class { font-size: 2.5rem; color: #38bdf8; font-weight: bold; letter-spacing: 2px; }
+
+        .highlight .rolling-name { color: #fcd34d; text-shadow: 0 0 20px rgba(252,211,77,0.5); }
+        .highlight .rolling-class { color: #ef4444; }
+
+        .btn-spin {
+            padding: 20px 60px; font-size: 2rem; font-weight: bold;
+            background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; 
+            border: none; border-radius: 50px; cursor: pointer; text-transform: uppercase;
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.4); transition: transform 0.1s;
+        }
+        .btn-spin:active { transform: scale(0.95); }
+        .btn-spin:disabled { opacity: 0.5; cursor: not-allowed; background: #64748b; box-shadow: none;}
+
+        .status-text { position: absolute; bottom: 20px; right: 30px; color: #64748b; font-size: 1.2rem; z-index: 10; }
+        .loading-spinner { display: inline-block; width: 15px; height: 15px; border: 2px solid rgba(255,255,255,.3); border-radius: 50%; border-top-color: #fff; animation: spin 1s ease-in-out infinite; margin-right: 8px; vertical-align: middle;}
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div id="floating-bg"></div>
+
+    <div class="content-wrapper">
+        <div class="header">
+            <div class="subtitle">Gala Kỷ Niệm 20 Năm Ngày Trở Về</div>
+            <h1 class="title">THPT HOÀI ĐỨC B</h1>
+        </div>
+
+        <div class="display-board" id="displayBoard">
+            <div class="rolling-name" id="nameDisplay">ĐANG TẢI DỮ LIỆU...</div>
+            <div class="rolling-class" id="classDisplay">Vui lòng chờ giây lát</div>
+        </div>
+
+        <button class="btn-spin" id="btnSpin" onclick="startDraw()" disabled>QUAY SỐ NGAY</button>
+    </div>
+    
+    <div class="status-text" id="statusCount">
+        <div class="loading-spinner"></div> Khởi tạo hệ thống...
+    </div>
+
+    <script>
+        let participants = [];
+        let isRolling = false;
+        let floatingInterval;
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        // --- ĐỌC DỮ LIỆU TỪ FILE TXT GẦN ĐÓ ---
+        async function loadData() {
+            try {
+                // Fetch file txt (Thêm date.now để vô hiệu hóa cache nếu bạn cập nhật file mới)
+                const response = await fetch('danh_sach_thay_co.txt?t=' + Date.now());
+                if (!response.ok) throw new Error("Không thể đọc file danh_sach_quay_thuong.txt");
+
+                const textData = await response.text();
+
+                // Cắt theo dòng và lọc các dòng trống
+                participants = textData.split('\n')
+                                       .map(line => line.trim())
+                                       .filter(line => line !== '');
+
+                if (participants.length > 0) {
+                    // XÁO TRỘN NGẪU NHIÊN DANH SÁCH (Thuật toán Fisher-Yates)
+                    for (let i = participants.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [participants[i], participants[j]] = [participants[j], participants[i]];
+                    }
+
+                    document.getElementById('statusCount').innerHTML = `✅ Sẵn sàng: <b>${participants.length}</b> thành viên`;
+                    document.getElementById('nameDisplay').innerText = "SẴN SÀNG";
+                    document.getElementById('classDisplay').innerText = "-";
+                    document.getElementById('btnSpin').disabled = false;
+                    
+                    startFloatingNames();
+                } else {
+                    throw new Error("File TXT rỗng");
+                }
+            } catch (error) {
+                console.error("Lỗi:", error);
+                document.getElementById('statusCount').innerHTML = "❌ Lỗi: Không đọc được file txt. (Chạy trên môi trường Server/Netlify để cấp quyền)";
+                document.getElementById('nameDisplay').innerText = "LỖI DỮ LIỆU";
+                document.getElementById('classDisplay').innerText = "Vui lòng xem lại file";
+            }
+        }
+
+        // --- BACKGROUND CHỮ TRÔI NỔI ---
+        function startFloatingNames() {
+            if (floatingInterval) clearInterval(floatingInterval);
+            const bg = document.getElementById('floating-bg');
+            bg.innerHTML = ''; 
+
+            if (participants.length === 0) return;
+
+            floatingInterval = setInterval(() => {
+                if (isRolling) return; 
+
+                const nameEl = document.createElement('div');
+                nameEl.className = 'float-name';
+                
+                const randomItem = participants[Math.floor(Math.random() * participants.length)];
+                nameEl.innerText = randomItem;
+
+                const startX = 5 + Math.random() * 85; 
+                const startY = 10 + Math.random() * 80; 
+                const fontSize = 1 + Math.random() * 2; 
+                const duration = 6 + Math.random() * 6; 
+
+                nameEl.style.left = `${startX}%`;
+                nameEl.style.top = `${startY}%`;
+                nameEl.style.fontSize = `${fontSize}rem`;
+                nameEl.style.animationDuration = `${duration}s`;
+
+                const colors = ['rgba(255,255,255,0.1)', 'rgba(56,189,248,0.15)', 'rgba(252,211,77,0.1)'];
+                nameEl.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+                bg.appendChild(nameEl);
+
+                setTimeout(() => {
+                    if (bg.contains(nameEl)) bg.removeChild(nameEl);
+                }, duration * 1000);
+
+            }, 400); 
+        }
+
+        // --- ÂM THANH & PHÁO GIẤY TỰ TỔNG HỢP ---
+        function playTickSound() {
+            if(audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'square';
+            osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(10, audioCtx.currentTime + 0.05);
+            gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.05);
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.start(); osc.stop(audioCtx.currentTime + 0.05);
+        }
+
+        function playWinSound() {
+            if(audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+            osc.frequency.linearRampToValueAtTime(1200, audioCtx.currentTime + 0.5);
+            gain.gain.setValueAtTime(0.6, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1.5);
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.start(); osc.stop(audioCtx.currentTime + 1.5);
+        }
+
+        function fireConfetti() {
+            var duration = 5000;
+            var end = Date.now() + duration;
+            (function frame() {
+                confetti({ particleCount: 10, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#fcd34d', '#ef4444', '#38bdf8', '#ffffff'] });
+                confetti({ particleCount: 10, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#fcd34d', '#ef4444', '#38bdf8', '#ffffff'] });
+                if (Date.now() < end) requestAnimationFrame(frame);
+            }());
+        }
+
+        // --- LOGIC QUAY ---
+        function startDraw() {
+            if (isRolling || participants.length === 0) return;
+
+            isRolling = true;
+            document.getElementById('btnSpin').disabled = true;
+            const board = document.getElementById('displayBoard');
+            const nameEl = document.getElementById('nameDisplay');
+            const classEl = document.getElementById('classDisplay');
+            
+            board.classList.remove('highlight');
+
+            let speed = 25;
+            let duration = 0;
+            const maxDuration = 4500; 
+
+            function roll() {
+                // Nhặt một người ngẫu nhiên cho hiệu ứng nhảy chữ
+                const randomItem = participants[Math.floor(Math.random() * participants.length)];
+                let parts = randomItem.split('-');
+                nameEl.innerText = parts[0] ? parts[0].trim() : randomItem;
+                classEl.innerText = parts[1] ? `Lớp ${parts[1].trim()}` : '';
+                
+                playTickSound();
+                duration += speed;
+                if (duration > maxDuration * 0.6) speed *= 1.12;
+
+                if (duration < maxDuration || speed < 500) {
+                    setTimeout(roll, speed);
+                } else {
+                    // CHỐT KẾT QUẢ CUỐI CÙNG
+                    const winnerItem = participants[Math.floor(Math.random() * participants.length)];
+                    let wParts = winnerItem.split('-');
+                    nameEl.innerText = wParts[0] ? wParts[0].trim() : winnerItem;
+                    classEl.innerText = wParts[1] ? `LỚP ${wParts[1].trim()}` : '';
+                    
+                    board.classList.add('highlight');
+                    playWinSound();
+                    fireConfetti();
+                    
+                    isRolling = false;
+                    document.getElementById('btnSpin').disabled = false;
+                }
+            }
+            roll();
+        }
+
+        // Tự động tải dữ liệu khi trang vừa mở
+        window.onload = loadData;
+    </script>
+</body>
+</html>
